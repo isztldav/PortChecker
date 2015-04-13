@@ -14,7 +14,7 @@ if __name__ == '__main__':
         	result = s.connect_ex((targetIP, int(array[i])))
 
         	if(result == 0) :
-            		print "Port", array[i], arraynname[i], "OPEN"
+            		print "Port", array[i], arrayname[i], "OPEN"
 		else:
 			print "Port", array[i], arrayname[i], "CLOSE"
         	s.close()
