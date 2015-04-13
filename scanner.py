@@ -6,7 +6,7 @@ if __name__ == '__main__':
     	targetIP = gethostbyname(target)
     	print 'Starting scan on host ', targetIP
     	array = ['21','25','80','139','3389','1723','1521','23','110','445','8080','5900','1433','3306']
-    	arraynomi = ['FTP','SMTP','HTTP','NETBIOS','RDP','VPN','Oracle DB','TELNET','POP3','Windows file Sharing','firewall','VNC','MSQL','Mysql']
+    	arrayname = ['FTP','SMTP','HTTP','NETBIOS','RDP','VPN','Oracle DB','TELNET','POP3','Windows file Sharing','firewall','VNC','MSQL','Mysql']
     	#scan reserved ports
     	for i in range(0,len(array)):
         	s = socket(AF_INET, SOCK_STREAM)
@@ -14,7 +14,7 @@ if __name__ == '__main__':
         	result = s.connect_ex((targetIP, int(array[i])))
 
         	if(result == 0) :
-            		print "Port", array[i], arraynomi[i], "OPEN"
+            		print "Port", array[i], arraynname[i], "OPEN"
 		else:
-			print "Port", array[i], arraynomi[i], "CLOSE"
+			print "Port", array[i], arrayname[i], "CLOSE"
         	s.close()
